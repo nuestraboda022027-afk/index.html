@@ -3,55 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestra Boda</title>
+    <title>Nuestra Boda - Karen & Alberto</title>
+    <!-- Fuente elegante de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #fdfbf7; color: #333; text-align: center; padding: 40px; }
-        form { background: white; max-width: 400px; margin: 0 auto; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: left; }
-        input, select, textarea { width: 100%; padding: 10px; margin: 8px 0 20px 0; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
-        button { background: #d4af37; color: white; border: none; padding: 12px; width: 100%; border-radius: 6px; font-size: 16px; cursor: pointer; }
-        button:hover { background: #b89728; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #4a4a4a;
+            /* Fondo sutil de boda con patrón suave */
+            background-color: #faf6f0;
+            background-image: radial-gradient(#e2d5c3 1px, transparent 1px);
+            background-size: 24px 24px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 520px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            border: 1px solid #eae2d6;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Adorno floral en los bordes */
+        .container::before {
+            content: "✨";
+            font-size: 20px;
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            color: #8c734b;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .pareja {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .fecha-texto {
+            font-size: 15px;
+            letter-spacing: 1px;
+            color: #777;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        /* Estilos del Reloj de Cuenta Regresiva */
+        .countdown-title {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #999;
+            margin-bottom: 12px;
+        }
+
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .time-card {
+            background: #fdfbf7;
+            border: 1px solid #e8ded1;
+            border-radius: 10px;
+            padding: 10px 14px;
+            min-width: 65px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+
+        .time-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #8c734b;
+            line-height: 1;
+        }
+
+        .time-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin-top: 4px;
+        }
+
+        /* Estilos del Formulario */
+        .subtitulo {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        form {
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 6px;
+            color: #444;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 14px;
+            margin-bottom: 18px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #c5a059;
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
+        }
+
+        button {
+            background: #c5a059;
+            color: white;
+            border: none;
+            padding: 14px;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 12px rgba(197, 160, 89, 0.3);
+        }
+
+        button:hover {
+            background: #b08c46;
+        }
+
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        #mensaje-exito {
+            display: none;
+            background: #f4f8f5;
+            border: 1px solid #c8e6c9;
+            padding: 20px;
+            border-radius: 10px;
+            color: #2e7d32;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
 
-    <h1>¡Nos Casamos!</h1>
-    <p>Karen && Alberto</p>
-    <p>20 de Febrero del 2027</p>
-    <p>Por favor confirma tu asistencia llenando el siguiente formulario:</p>
+    <div class="container">
+        <h1>¡Nos Casamos!</h1>
+        <div class="pareja">Karen & Alberto</div>
+        <div class="fecha-texto">20 de Febrero del 2027</div>
 
-    <!-- Formulario que apunta a tu Google Apps Script -->
-    <form id="rsvp-form">
-        <label for="Nombre">Nombre completo:</label>
-        <input type="text" id="Nombre" name="Nombre" required>
+        <!-- Sección de Cuenta Regresiva -->
+        <div class="countdown-title">Faltan tan solo:</div>
+        <div class="countdown-container">
+            <div class="time-card">
+                <div class="time-number" id="days">00</div>
+                <div class="time-label">Días</div>
+            </div>
+            <div class="time-card">
+                <div class="time-number" id="hours">00</div>
+                <div class="time-label">Horas</div>
+            </div>
+            <div class="time-card">
+                <div class="time-number" id="minutes">00</div>
+                <div class="time-label">Min</div>
+            </div>
+            <div class="time-card">
+                <div class="time-number" id="seconds">00</div>
+                <div class="time-label">Seg</div>
+            </div>
+        </div>
 
-        <label for="Asistencia">¿Nos acompañaras?</label>
-        <select id="Asistencia" name="Asistencia">
-            <option value="Sí">Sí, ahí estaré</option>
-            <option value="No">No podré asistir</option>
-        </select>
+        <p class="subtitulo">Por favor confirma tu asistencia llenando el siguiente formulario:</p>
 
-        <label for="Acompañantes">Número de acompañantes:</label>
-        <input type="number" id="Acompañantes" name="Acompañantes" value="0" min="0">
+        <!-- Formulario RSVP -->
+        <form id="rsvp-form">
+            <label for="Nombre">Nombre completo:</label>
+            <input type="text" id="Nombre" name="Nombre" required placeholder="Tu nombre y apellido">
 
-        <label for="Mensaje">Mensaje para los novios:</label>
-        <textarea id="Mensaje" name="Mensaje" rows="3"></textarea>
+            <label for="Asistencia">¿Nos acompañarás?</label>
+            <select id="Asistencia" name="Asistencia">
+                <option value="Sí, ahí estaré">Sí, ahí estaré</option>
+                <option value="No podré asistir">No podré asistir</option>
+            </select>
 
-        <button type="submit" id="btn-enviar">Confirmar Asistencia</button>
-    </form>
+            <label for="Acompañantes">Número de acompañantes:</label>
+            <input type="number" id="Acompañantes" name="Acompañantes" value="0" min="0">
 
-    <div id="mensaje-exito" style="display:none; color: green; margin-top: 20px;">
-        <h3>¡Gracias por confirmar! Hemos guardado tu respuesta.</h3>
+            <label for="Mensaje">Mensaje para los novios:</label>
+            <textarea id="Mensaje" name="Mensaje" rows="3" placeholder="Déjanos unas palabras..."></textarea>
+
+            <button type="submit" id="btn-enviar">Confirmar Asistencia</button>
+        </form>
+
+        <div id="mensaje-exito">
+            <h3>¡Muchas gracias por confirmar!</h3>
+            <p>Hemos guardado tu respuesta con éxito.</p>
+        </div>
     </div>
 
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxvUzb96Z1CmmHKXm38kTWVHuwdE1gj1GdHjxPYtSwGycBSlxzxfzHm5skks-RYJMoN/exec';
+        // --- 1. REEMPLAZA AQUÍ TU URL DE GOOGLE APPS SCRIPT ---
+        const scriptURL = 'PEGAR_AQUI_TU_URL_DE_GOOGLE_APPS_SCRIPT';
+
+        // --- 2. LÓGICA DE LA CUENTA REGRESIVA ---
+        const fechaBoda = new Date("Feb 20, 2027 00:00:00").getTime();
+
+        function actualizarCuentaRegresiva() {
+            const ahora = new Date().getTime();
+            const diferencia = fechaBoda - ahora;
+
+            if (diferencia > 0) {
+                const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+                const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+                const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerText = dias < 10 ? '0' + dias : dias;
+                document.getElementById("hours").innerText = horas < 10 ? '0' + horas : horas;
+                document.getElementById("minutes").innerText = minutos < 10 ? '0' + minutos : minutos;
+                document.getElementById("seconds").innerText = segundos < 10 ? '0' + segundos : segundos;
+            }
+        }
+
+        setInterval(actualizarCuentaRegresiva, 1000);
+        actualizarCuentaRegresiva();
+
+        // --- 3. ENVÍO DEL FORMULARIO A GOOGLE SHEETS ---
         const form = document.getElementById('rsvp-form');
         const mensajeExito = document.getElementById('mensaje-exito');
 
         form.addEventListener('submit', e => {
             e.preventDefault();
-            document.getElementById('btn-enviar').disabled = true;
-            document.getElementById('btn-enviar').innerText = 'Enviando...';
+            const btn = document.getElementById('btn-enviar');
+            btn.disabled = true;
+            btn.innerText = 'Enviando...';
 
             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(response => {
@@ -61,11 +290,10 @@
                 .catch(error => {
                     console.error('Error!', error.message);
                     alert('Hubo un error al enviar. Por favor intenta de nuevo.');
-                    document.getElementById('btn-enviar').disabled = false;
-                    document.getElementById('btn-enviar').innerText = 'Confirmar Asistencia';
+                    btn.disabled = false;
+                    btn.innerText = 'Confirmar Asistencia';
                 });
         });
     </script>
-
 </body>
 </html>
