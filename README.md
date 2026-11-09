@@ -43,7 +43,7 @@
     </div>
 
     <script>
-        const scriptURL = 'PEGAR_AQUI_TU_URL_DE_GOOGLE_APPS_SCRIPT';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxvUzb96Z1CmmHKXm38kTWVHuwdE1gj1GdHjxPYtSwGycBSlxzxfzHm5skks-RYJMoN/exec';
         const form = document.getElementById('rsvp-form');
         const mensajeExito = document.getElementById('mensaje-exito');
 
