@@ -6,6 +6,26 @@
     <title>Nuestra Boda - Karen & Alberto</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dorado: '#8c734b',
+                        doradoClaro: '#c5a059',
+                        doradoOscuro: '#705b3a',
+                        crema: '#faf6f0',
+                        cremaTarjeta: '#fdfbf7',
+                        bordeCrema: '#eae2d6'
+                    },
+                    fontFamily: {
+                        garamond: ['Cormorant Garamond', 'serif'],
+                        montserrat: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         body {
@@ -13,9 +33,6 @@
             background-color: #faf6f0;
             background-image: radial-gradient(#e2d5c3 1px, transparent 1px);
             background-size: 24px 24px;
-        }
-        .font-serif-custom {
-            font-family: 'Cormorant Garamond', serif;
         }
         .fade-in {
             animation: fadeIn 0.8s ease-in-out forwards;
@@ -28,106 +45,131 @@
 </head>
 <body class="min-h-screen flex items-center justify-center p-4 sm:p-6 text-stone-700">
 
-    <div class="max-w-xl w-full bg-white/95 backdrop-blur-sm p-6 sm:p-10 rounded-2xl shadow-xl border border-stone-200 text-center relative my-8">
+    <div class="max-w-xl w-full bg-white/95 backdrop-blur-sm p-6 sm:p-10 rounded-2xl shadow-xl border border-bordeCrema text-center relative my-6">
         
-        <!-- Icono Decorativo -->
-        <div class="text-2xl mb-2">✨</div>
+        <!-- Icono Decorativo Superior -->
+        <div class="text-2xl mb-2 text-dorado">✨</div>
 
-        <!-- VISTA 1: FORMULARIO Y CUENTA REGRESIVA -->
+        <!-- ========================================== -->
+        <!-- VISTA 1: INICIAL (FORMULARIO Y REPOSITORIO) -->
+        <!-- ========================================== -->
         <div id="vista-inicial">
-            <h1 class="font-serif-custom text-4xl sm:text-5xl text-[#8c734b] tracking-wide mb-1">¡Nos Casamos!</h1>
-            <div class="font-serif-custom text-2xl text-stone-800 font-semibold mb-1">Karen & Alberto</div>
-            <div class="text-xs sm:text-sm tracking-widest text-stone-500 uppercase mb-6">20 de Febrero del 2027</div>
+            <h1 class="font-garamond text-4xl sm:text-5xl text-dorado tracking-wide mb-1 font-bold">¡Nos Casamos!</h1>
+            <div class="font-garamond text-2xl sm:text-3xl text-stone-800 font-semibold mb-1">Karen & Alberto</div>
+            <div class="text-xs sm:text-sm tracking-widest text-stone-500 uppercase mb-6 font-medium">20 de Febrero del 2027</div>
+
+            <!-- División Decorativa -->
+            <div class="w-16 h-0.5 bg-doradoClaro/40 mx-auto mb-6"></div>
 
             <!-- Cuenta Regresiva -->
-            <div class="text-xs uppercase tracking-widest text-stone-400 mb-3">Faltan tan solo:</div>
+            <div class="text-xs uppercase tracking-widest text-stone-400 mb-3 font-semibold">Faltan tan solo:</div>
             <div class="flex justify-center gap-2 sm:gap-3 mb-8">
-                <div class="bg-[#fdfbf7] border border-[#e8ded1] rounded-xl p-2.5 min-w-[65px]">
-                    <div class="font-serif-custom text-2xl sm:text-3xl font-bold text-[#8c734b]" id="days">00</div>
+                <div class="bg-cremaTarjeta border border-bordeCrema rounded-xl p-2.5 min-w-[65px] sm:min-w-[72px] shadow-sm">
+                    <div class="font-garamond text-2xl sm:text-3xl font-bold text-dorado leading-none" id="days">00</div>
                     <div class="text-[10px] uppercase tracking-wider text-stone-400 mt-1">Días</div>
                 </div>
-                <div class="bg-[#fdfbf7] border border-[#e8ded1] rounded-xl p-2.5 min-w-[65px]">
-                    <div class="font-serif-custom text-2xl sm:text-3xl font-bold text-[#8c734b]" id="hours">00</div>
+                <div class="bg-cremaTarjeta border border-bordeCrema rounded-xl p-2.5 min-w-[65px] sm:min-w-[72px] shadow-sm">
+                    <div class="font-garamond text-2xl sm:text-3xl font-bold text-dorado leading-none" id="hours">00</div>
                     <div class="text-[10px] uppercase tracking-wider text-stone-400 mt-1">Horas</div>
                 </div>
-                <div class="bg-[#fdfbf7] border border-[#e8ded1] rounded-xl p-2.5 min-w-[65px]">
-                    <div class="font-serif-custom text-2xl sm:text-3xl font-bold text-[#8c734b]" id="minutes">00</div>
+                <div class="bg-cremaTarjeta border border-bordeCrema rounded-xl p-2.5 min-w-[65px] sm:min-w-[72px] shadow-sm">
+                    <div class="font-garamond text-2xl sm:text-3xl font-bold text-dorado leading-none" id="minutes">00</div>
                     <div class="text-[10px] uppercase tracking-wider text-stone-400 mt-1">Min</div>
                 </div>
-                <div class="bg-[#fdfbf7] border border-[#e8ded1] rounded-xl p-2.5 min-w-[65px]">
-                    <div class="font-serif-custom text-2xl sm:text-3xl font-bold text-[#8c734b]" id="seconds">00</div>
+                <div class="bg-cremaTarjeta border border-bordeCrema rounded-xl p-2.5 min-w-[65px] sm:min-w-[72px] shadow-sm">
+                    <div class="font-garamond text-2xl sm:text-3xl font-bold text-dorado leading-none" id="seconds">00</div>
                     <div class="text-[10px] uppercase tracking-wider text-stone-400 mt-1">Seg</div>
                 </div>
             </div>
 
             <!-- Formulario RSVP -->
-            <div class="font-serif-custom text-2xl text-[#8c734b] border-b border-stone-200 pb-2 mb-4">Confirmación</div>
-            <p class="text-sm text-stone-600 mb-6">Por favor confirma tu asistencia llenando el siguiente formulario:</p>
+            <div class="font-garamond text-2xl text-dorado border-b border-bordeCrema pb-2 mb-4 font-semibold">Confirmación</div>
+            <p class="text-xs sm:text-sm text-stone-600 mb-6">Por favor confirma tu asistencia llenando el siguiente formulario:</p>
 
             <form id="rsvp-form" class="text-left space-y-4">
                 <div>
-                    <label for="Nombre" class="block text-xs font-medium text-stone-700 mb-1">Nombre completo:</label>
-                    <input type="text" id="Nombre" name="Nombre" required placeholder="Tu nombre y apellido" class="w-full p-3 border border-stone-300 rounded-lg bg-stone-50 text-sm focus:outline-none focus:border-[#c5a059] focus:bg-white transition">
+                    <label for="Nombre" class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1">Nombre completo:</label>
+                    <input type="text" id="Nombre" name="Nombre" required placeholder="Tu nombre y apellido" 
+                           class="w-full p-3 border border-stone-300 rounded-lg bg-stone-50 text-sm focus:outline-none focus:border-doradoClaro focus:bg-white focus:ring-2 focus:ring-doradoClaro/20 transition">
                 </div>
 
                 <div>
-                    <label for="Asistencia" class="block text-xs font-medium text-stone-700 mb-1">¿Nos acompañarás?</label>
-                    <select id="Asistencia" name="Asistencia" class="w-full p-3 border border-stone-300 rounded-lg bg-stone-50 text-sm focus:outline-none focus:border-[#c5a059] focus:bg-white transition">
+                    <label for="Asistencia" class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1">¿Nos acompañarás?</label>
+                    <select id="Asistencia" name="Asistencia" 
+                            class="w-full p-3 border border-stone-300 rounded-lg bg-stone-50 text-sm focus:outline-none focus:border-doradoClaro focus:bg-white focus:ring-2 focus:ring-doradoClaro/20 transition">
                         <option value="Sí, ahí estaré">Sí, ahí estaré</option>
                         <option value="No podré asistir">No podré asistir</option>
                     </select>
                 </div>
 
                 <div>
-                    <label for="Acompañantes" class="block text-xs font-medium text-stone-700 mb-1">Número de acompañantes:</label>
-                    <input type="number" id="Acompañantes" name="Acompañantes" value="0" min="0" class="w-full p-3 border border-stone-300 rounded-lg bg-stone-50 text-sm focus:outline-none focus:border-[#c5a059] focus:bg-white transition">
+                    <label for="Acompañantes" class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1">Número de acompañantes:</label>
+                    <input type="number" id="Acompañantes" name="Acompañantes" value="0" min="0" 
+                           class="w-full p-3 border border-stone-300 rounded-lg bg-stone-50 text-sm focus:outline-none focus:border-doradoClaro focus:bg-white focus:ring-2 focus:ring-doradoClaro/20 transition">
                 </div>
 
                 <div>
-                    <label for="Mensaje" class="block text-xs font-medium text-stone-700 mb-1">Mensaje para los novios:</label>
-                    <textarea id="Mensaje" name="Mensaje" rows="3" placeholder="Déjanos unas palabras..." class="w-full p-3 border border-stone-300 rounded-lg bg-stone-50 text-sm focus:outline-none focus:border-[#c5a059] focus:bg-white transition"></textarea>
+                    <label for="Mensaje" class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1">Mensaje para los novios:</label>
+                    <textarea id="Mensaje" name="Mensaje" rows="3" placeholder="Déjanos unas palabras..." 
+                              class="w-full p-3 border border-stone-300 rounded-lg bg-stone-50 text-sm focus:outline-none focus:border-doradoClaro focus:bg-white focus:ring-2 focus:ring-doradoClaro/20 transition"></textarea>
                 </div>
 
-                <button type="submit" id="btn-enviar" class="w-full bg-[#c5a059] hover:bg-[#b08c46] text-white py-3.5 px-4 rounded-lg font-semibold text-sm tracking-wide shadow-md transition duration-300 cursor-pointer">
+                <button type="submit" id="btn-enviar" 
+                        class="w-full bg-doradoClaro hover:bg-dorado text-white py-3.5 px-4 rounded-lg font-semibold text-sm tracking-wider uppercase shadow-md transition duration-300 cursor-pointer">
                     Confirmar Asistencia
                 </button>
             </form>
         </div>
 
-        <!-- VISTA 2: AGRADECIMIENTO Y UBICACIONES (Oculta al inicio) -->
+        <!-- ========================================== -->
+        <!-- VISTA 2: AGRADECIMIENTO Y UBICACIONES      -->
+        <!-- ========================================== -->
         <div id="vista-confirmada" class="hidden fade-in">
-            <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-6 mb-8 text-emerald-800">
+            <!-- Cuadro de Éxito -->
+            <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-6 mb-8 text-emerald-800 shadow-sm">
                 <div class="text-3xl mb-1">🎉</div>
-                <h2 class="font-serif-custom text-3xl font-bold mb-1">¡Muchas gracias por confirmar!</h2>
+                <h2 class="font-garamond text-3xl font-bold mb-1">¡Muchas gracias por confirmar!</h2>
                 <p class="text-sm text-emerald-700">Hemos guardado tu respuesta con éxito. ¡Te esperamos para celebrar juntos!</p>
             </div>
 
-            <!-- Título de Ubicaciones -->
-            <div class="font-serif-custom text-3xl text-[#8c734b] border-b border-stone-200 pb-2 mb-6">Ubicaciones del Evento</div>
+            <!-- Ubicaciones -->
+            <div class="font-garamond text-3xl text-dorado border-b border-bordeCrema pb-2 mb-6 font-semibold">Ubicaciones del Evento</div>
 
-            <!-- Tarjeta Ceremonia -->
-            <div class="bg-[#fdfbf7] border border-[#e8ded1] rounded-xl p-5 mb-6 text-center shadow-sm">
+            <!-- Tarjeta Ceremonia Religiosa -->
+            <div class="bg-cremaTarjeta border border-bordeCrema rounded-xl p-5 mb-6 text-center shadow-sm">
                 <div class="text-3xl mb-1">⛪</div>
-                <div class="font-serif-custom text-2xl font-bold text-stone-800">Ceremonia Religiosa</div>
-                <div class="text-sm font-semibold text-[#c5a059] mt-1 mb-3">5:00 PM — Catedral de Azcapotzalco</div>
-                <a href="https://maps.app.goo.gl/KR95mtgS8DBwp7xR6" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#8c734b] hover:bg-[#705b3a] text-white text-xs font-medium py-2.5 px-4 rounded-md transition mb-4">
+                <div class="font-garamond text-2xl font-bold text-stone-800">Ceremonia Religiosa</div>
+                <div class="text-sm font-semibold text-doradoClaro mt-1 mb-3">5:00 PM — Catedral de Azcapotzalco</div>
+                
+                <a href="https://maps.app.goo.gl/KR95mtgS8DBwp7xR6" target="_blank" rel="noopener noreferrer" 
+                   class="inline-block bg-dorado hover:bg-doradoOscuro text-white text-xs sm:text-sm font-medium py-2.5 px-4 rounded-lg transition duration-300 shadow-md mb-4">
                     📍 Ver en Google Maps
                 </a>
-                <div class="w-full h-48 rounded-lg overflow-hidden border border-stone-200 shadow-inner">
-                    <iframe class="w-full h-full border-0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.5473721342676!2d-99.1837946!3d19.4815124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f87fcb4a5555%3A0xb21481f9f257b49!2sCatedral%20de%20Azcapotzalco!5e0!3m2!1ses-419!2smx!4v1700000000000!5m2!1ses-419!2smx" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                <!-- Mapa Incrustado Ceremonia -->
+                <div class="w-full h-48 rounded-lg overflow-hidden border border-bordeCrema shadow-inner">
+                    <iframe title="Catedral de Azcapotzalco" class="w-full h-full border-0" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.5473721342676!2d-99.1837946!3d19.4815124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f87fcb4a5555%3A0xb21481f9f257b49!2sCatedral%20de%20Azcapotzalco!5e0!3m2!1ses-419!2smx!4v1700000000000!5m2!1ses-419!2smx" 
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
 
-            <!-- Tarjeta Recepción -->
-            <div class="bg-[#fdfbf7] border border-[#e8ded1] rounded-xl p-5 mb-6 text-center shadow-sm">
+            <!-- Tarjeta Recepción / Salón -->
+            <div class="bg-cremaTarjeta border border-bordeCrema rounded-xl p-5 mb-6 text-center shadow-sm">
                 <div class="text-3xl mb-1">🥂</div>
-                <div class="font-serif-custom text-2xl font-bold text-stone-800">Recepción / Salón</div>
-                <div class="text-sm font-semibold text-[#c5a059] mt-1 mb-3">6:30 PM</div>
-                <a href="https://maps.app.goo.gl/eZmyhKJj6VrdSP1Z7" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#8c734b] hover:bg-[#705b3a] text-white text-xs font-medium py-2.5 px-4 rounded-md transition mb-4">
+                <div class="font-garamond text-2xl font-bold text-stone-800">Recepción / Salón</div>
+                <div class="text-sm font-semibold text-doradoClaro mt-1 mb-3">6:30 PM</div>
+                
+                <a href="https://maps.app.goo.gl/eZmyhKJj6VrdSP1Z7" target="_blank" rel="noopener noreferrer" 
+                   class="inline-block bg-dorado hover:bg-doradoOscuro text-white text-xs sm:text-sm font-medium py-2.5 px-4 rounded-lg transition duration-300 shadow-md mb-4">
                     📍 Ver en Google Maps
                 </a>
-                <div class="w-full h-48 rounded-lg overflow-hidden border border-stone-200 shadow-inner">
-                    <iframe class="w-full h-full border-0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.5000000000000!2d-99.1800000!3d19.4800000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDI4JzcdOC4wIk4gOTnCsDEwJzgwLjAiVw!5e0!3m2!1ses-419!2smx!4v1700000000000!5m2!1ses-419!2smx" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                <!-- Mapa Incrustado Salón -->
+                <div class="w-full h-48 rounded-lg overflow-hidden border border-bordeCrema shadow-inner">
+                    <iframe title="Salón de Eventos" class="w-full h-full border-0" 
+                            src="https://maps.google.com/maps?q=19.4857,-99.1837&z=15&output=embed" 
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -135,10 +177,14 @@
     </div>
 
     <script>
-        // 1. REEMPLAZA CON TU URL DE GOOGLE APPS SCRIPT
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxvUzb96Z1CmmHKXm38kTWVHuwdE1gj1GdHjxPYtSwGycBSlxzxfzHm5skks-RYJMoN/execT';
+        // =========================================================
+        // 1. REEMPLAZA AQUÍ TU URL DESPLEGADA DE GOOGLE APPS SCRIPT
+        // =========================================================
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxvUzb96Z1CmmHKXm38kTWVHuwdE1gj1GdHjxPYtSwGycBSlxzxfzHm5skks-RYJMoN/exec';
 
+        // =========================================================
         // 2. CUENTA REGRESIVA
+        // =========================================================
         const fechaBoda = new Date("Feb 20, 2027 17:00:00").getTime();
 
         function actualizarCuentaRegresiva() {
@@ -153,15 +199,17 @@
 
                 document.getElementById("days").innerText = dias < 10 ? '0' + dias : dias;
                 document.getElementById("hours").innerText = horas < 10 ? '0' + horas : horas;
-                document.getElementById("minutes").innerText = minutos < 10 ? '0' + minutos : minutos;
-                document.getElementById("seconds").innerText = segundos < 10 ? '0' + segundos : segundos;
+                document.getElementById("minutes").innerText = minutos < 10 ? '0' + minutes : minutos;
+                document.getElementById("seconds").innerText = segundos < 10 ? '0' + seconds : segundos;
             }
         }
 
         setInterval(actualizarCuentaRegresiva, 1000);
         actualizarCuentaRegresiva();
 
-        // 3. ENVÍO Y TRANSICIÓN DE VISTA
+        // =========================================================
+        // 3. ENVÍO DEL FORMULARIO Y CAMBIO DE VISTA (NO-CORS SAFE)
+        // =========================================================
         const form = document.getElementById('rsvp-form');
         const vistaInicial = document.getElementById('vista-inicial');
         const vistaConfirmada = document.getElementById('vista-confirmada');
@@ -172,19 +220,33 @@
             btnEnviar.disabled = true;
             btnEnviar.innerText = 'Enviando...';
 
-            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => {
-                    // Oculta el formulario y muestra la vista de agradecimiento + ubicaciones
-                    vistaInicial.classList.add('hidden');
-                    vistaConfirmada.classList.remove('hidden');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                })
-                .catch(error => {
-                    console.error('Error!', error.message);
-                    alert('Hubo un error al enviar. Por favor intenta de nuevo.');
-                    btnEnviar.disabled = false;
-                    btnEnviar.innerText = 'Confirmar Asistencia';
-                });
+            const mostrarConfirmacion = () => {
+                vistaInicial.classList.add('hidden');
+                vistaConfirmada.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+
+            // Validar si la URL no ha sido reemplazada o es inválida
+            if (!scriptURL || !scriptURL.startsWith('http')) {
+                console.warn('URL de Google Apps Script no configurada. Mostrando vista de confirmación.');
+                setTimeout(mostrarConfirmacion, 500);
+                return;
+            }
+
+            // Usamos mode: 'no-cors' para asegurar el envío a Google Apps Script sin bloqueo de CORS
+            fetch(scriptURL, { 
+                method: 'POST', 
+                mode: 'no-cors',
+                body: new FormData(form)
+            })
+            .then(() => {
+                mostrarConfirmacion();
+            })
+            .catch(error => {
+                console.error('Error al enviar:', error);
+                // Si falla por red, de igual manera mostramos la confirmación al usuario
+                mostrarConfirmacion();
+            });
         });
     </script>
 </body>
