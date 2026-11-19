@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestra Boda - Fany & Daniel</title>
-    <!-- Fuente elegante de Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>Nuestra Boda - Karen & Alberto</title>
+    <!-- Fuentes elegantes de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -16,7 +16,6 @@
         body {
             font-family: 'Montserrat', sans-serif;
             color: #4a4a4a;
-            /* Fondo sutil de boda con patrón suave */
             background-color: #faf6f0;
             background-image: radial-gradient(#e2d5c3 1px, transparent 1px);
             background-size: 24px 24px;
@@ -28,7 +27,7 @@
         }
 
         .container {
-            max-width: 520px;
+            max-width: 550px;
             width: 100%;
             background: rgba(255, 255, 255, 0.95);
             padding: 40px 30px;
@@ -39,7 +38,6 @@
             position: relative;
         }
 
-        /* Adorno floral en los bordes */
         .container::before {
             content: "✨";
             font-size: 20px;
@@ -74,7 +72,7 @@
             margin-bottom: 25px;
         }
 
-        /* Estilos del Reloj de Cuenta Regresiva */
+        /* Reloj de Cuenta Regresiva */
         .countdown-title {
             font-size: 13px;
             text-transform: uppercase;
@@ -86,16 +84,16 @@
         .countdown-container {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
+            gap: 12px;
+            margin-bottom: 35px;
         }
 
         .time-card {
             background: #fdfbf7;
             border: 1px solid #e8ded1;
             border-radius: 10px;
-            padding: 10px 14px;
-            min-width: 65px;
+            padding: 10px 12px;
+            min-width: 60px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.02);
         }
 
@@ -115,7 +113,62 @@
             margin-top: 4px;
         }
 
-        /* Estilos del Formulario */
+        /* Secciones e Itinerario / Ubicaciones */
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            color: #8c734b;
+            margin: 30px 0 15px 0;
+            border-bottom: 1px solid #eae2d6;
+            padding-bottom: 8px;
+        }
+
+        .location-card {
+            background: #fdfbf7;
+            border: 1px solid #e8ded1;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .location-icon {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .location-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .location-time {
+            font-size: 14px;
+            font-weight: 600;
+            color: #c5a059;
+            margin-bottom: 10px;
+        }
+
+        .map-btn {
+            display: inline-block;
+            background: #8c734b;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        .map-btn:hover {
+            background: #705b3a;
+        }
+
+        /* Formulario */
         .subtitulo {
             font-size: 14px;
             color: #666;
@@ -153,7 +206,7 @@
             box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
         }
 
-        button {
+        .btn-submit {
             background: #c5a059;
             color: white;
             border: none;
@@ -168,11 +221,11 @@
             box-shadow: 0 4px 12px rgba(197, 160, 89, 0.3);
         }
 
-        button:hover {
+        .btn-submit:hover {
             background: #b08c46;
         }
 
-        button:disabled {
+        .btn-submit:disabled {
             background: #ccc;
             cursor: not-allowed;
             box-shadow: none;
@@ -196,7 +249,7 @@
         <div class="pareja">Karen & Alberto</div>
         <div class="fecha-texto">20 de Febrero del 2027</div>
 
-        <!-- Sección de Cuenta Regresiva -->
+        <!-- Sección Cuenta Regresiva -->
         <div class="countdown-title">Faltan tan solo:</div>
         <div class="countdown-container">
             <div class="time-card">
@@ -217,9 +270,33 @@
             </div>
         </div>
 
+        <!-- Sección de Ubicaciones e Itinerario -->
+        <div class="section-title">¿Dónde & Cuándo?</div>
+
+        <!-- Tarjeta de Misa -->
+        <div class="location-card">
+            <div class="location-icon">⛪</div>
+            <div class="location-name">Ceremonia Religiosa</div>
+            <div class="location-time">5:00 PM — Catedral de Azcapotzalco</div>
+            <a href="https://maps.app.goo.gl/KR95mtgS8DBwp7xR6" target="_blank" rel="noopener noreferrer" class="map-btn">
+                📍 Ver Ubicación en Google Maps
+            </a>
+        </div>
+
+        <!-- Tarjeta de Recepción / Salón -->
+        <div class="location-card">
+            <div class="location-icon">🥂</div>
+            <div class="location-name">Recepción / Salón</div>
+            <div class="location-time">6:30 PM</div>
+            <a href="https://maps.app.goo.gl/eZmyhKJj6VrdSP1Z7" target="_blank" rel="noopener noreferrer" class="map-btn">
+                📍 Ver Ubicación en Google Maps
+            </a>
+        </div>
+
+        <!-- Sección Formulario RSVP -->
+        <div class="section-title">Confirmación</div>
         <p class="subtitulo">Por favor confirma tu asistencia llenando el siguiente formulario:</p>
 
-        <!-- Formulario RSVP -->
         <form id="rsvp-form">
             <label for="Nombre">Nombre completo:</label>
             <input type="text" id="Nombre" name="Nombre" required placeholder="Tu nombre y apellido">
@@ -236,7 +313,7 @@
             <label for="Mensaje">Mensaje para los novios:</label>
             <textarea id="Mensaje" name="Mensaje" rows="3" placeholder="Déjanos unas palabras..."></textarea>
 
-            <button type="submit" id="btn-enviar">Confirmar Asistencia</button>
+            <button type="submit" id="btn-enviar" class="btn-submit">Confirmar Asistencia</button>
         </form>
 
         <div id="mensaje-exito">
@@ -246,11 +323,11 @@
     </div>
 
     <script>
-        // --- 1. REEMPLAZA AQUÍ TU URL DE GOOGLE APPS SCRIPT ---
+        // --- 1. TU URL DE GOOGLE APPS SCRIPT ---
         const scriptURL = 'PEGAR_AQUI_TU_URL_DE_GOOGLE_APPS_SCRIPT';
 
         // --- 2. LÓGICA DE LA CUENTA REGRESIVA ---
-        const fechaBoda = new Date("Feb 20, 2027 00:00:00").getTime();
+        const fechaBoda = new Date("Feb 20, 2027 17:00:00").getTime();
 
         function actualizarCuentaRegresiva() {
             const ahora = new Date().getTime();
