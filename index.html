@@ -65,19 +65,19 @@
             <div class="text-xs uppercase tracking-widest text-stone-400 mb-3 font-semibold">Faltan tan solo:</div>
             <div class="flex justify-center gap-2 sm:gap-3 mb-8">
                 <div class="bg-cremaTarjeta border border-bordeCrema rounded-xl p-2.5 min-w-[65px] sm:min-w-[72px] shadow-sm">
-                    <div class="font-garamond text-2xl sm:text-3xl font-bold text-dorado leading-none" id="days">00</div>
+                    <div class="font-garamond text-2xl sm:text-3xl font-bold text-dorado leading-none" id="countdown-days">00</div>
                     <div class="text-[10px] uppercase tracking-wider text-stone-400 mt-1">Días</div>
                 </div>
                 <div class="bg-cremaTarjeta border border-bordeCrema rounded-xl p-2.5 min-w-[65px] sm:min-w-[72px] shadow-sm">
-                    <div class="font-garamond text-2xl sm:text-3xl font-bold text-dorado leading-none" id="hours">00</div>
+                    <div class="font-garamond text-2xl sm:text-3xl font-bold text-dorado leading-none" id="countdown-hours">00</div>
                     <div class="text-[10px] uppercase tracking-wider text-stone-400 mt-1">Horas</div>
                 </div>
                 <div class="bg-cremaTarjeta border border-bordeCrema rounded-xl p-2.5 min-w-[65px] sm:min-w-[72px] shadow-sm">
-                    <div class="font-garamond text-2xl sm:text-3xl font-bold text-dorado leading-none" id="minutes">00</div>
+                    <div class="font-garamond text-2xl sm:text-3xl font-bold text-dorado leading-none" id="countdown-minutes">00</div>
                     <div class="text-[10px] uppercase tracking-wider text-stone-400 mt-1">Min</div>
                 </div>
                 <div class="bg-cremaTarjeta border border-bordeCrema rounded-xl p-2.5 min-w-[65px] sm:min-w-[72px] shadow-sm">
-                    <div class="font-garamond text-2xl sm:text-3xl font-bold text-dorado leading-none" id="seconds">00</div>
+                    <div class="font-garamond text-2xl sm:text-3xl font-bold text-dorado leading-none" id="countdown-seconds">00</div>
                     <div class="text-[10px] uppercase tracking-wider text-stone-400 mt-1">Seg</div>
                 </div>
             </div>
@@ -183,24 +183,29 @@
         const scriptURL = 'https://script.google.com/macros/s/AKfycbxvUzb96Z1CmmHKXm38kTWVHuwdE1gj1GdHjxPYtSwGycBSlxzxfzHm5skks-RYJMoN/exec';
 
         // =========================================================
-        // 2. CUENTA REGRESIVA
+        // 2. CUENTA REGRESIVA (IDs ÚNICOS SIN COLISIÓN GLOBAL)
         // =========================================================
         const fechaBoda = new Date("Feb 20, 2027 17:00:00").getTime();
+
+        const elDays = document.getElementById("countdown-days");
+        const elHours = document.getElementById("countdown-hours");
+        const elMinutes = document.getElementById("countdown-minutes");
+        const elSeconds = document.getElementById("countdown-seconds");
 
         function actualizarCuentaRegresiva() {
             const ahora = new Date().getTime();
             const diferencia = fechaBoda - ahora;
 
             if (diferencia > 0) {
-                const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-                const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-                const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+                const numDias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+                const numHoras = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const numMinutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+                const numSegundos = Math.floor((diferencia % (1000 * 60)) / 1000);
 
-                document.getElementById("days").innerText = dias < 10 ? '0' + dias : dias;
-                document.getElementById("hours").innerText = horas < 10 ? '0' + horas : horas;
-                document.getElementById("minutes").innerText = minutos < 10 ? '0' + minutes : minutos;
-                document.getElementById("seconds").innerText = segundos < 10 ? '0' + seconds : segundos;
+                if (elDays) elDays.textContent = numDias < 10 ? '0' + numDias : numDias;
+                if (elHours) elHours.textContent = numHoras < 10 ? '0' + numHoras : numHoras;
+                if (elMinutes) elMinutes.textContent = numMinutos < 10 ? '0' + numMinutos : numMinutos;
+                if (elSeconds) elSeconds.textContent = numSegundos < 10 ? '0' + numSegundos : numSegundos;
             }
         }
 
