@@ -28,33 +28,27 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
+        /* Fondo General de Pantalla Tenue */
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: #faf6f0;
-            background-image: radial-gradient(#e2d5c3 1px, transparent 1px);
-            background-size: 24px 24px;
+            position: relative;
+            min-height: 100vh;
         }
 
-        /* Marca de agua nítida y visible con la imagen corregida (Boda.jpg) */
-        .tarjeta-invitacion {
-            position: relative;
-            overflow: hidden;
-        }
-        .tarjeta-invitacion::before {
+        /* Capa de fondo con Boda.jpg tenue */
+        body::before {
             content: "";
-            position: absolute;
+            position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
             background-image: url('Boda.jpg');
             background-repeat: no-repeat;
             background-position: center center;
-            background-size: contain;
-            opacity: 0.38; /* Visibilidad equilibrada */
+            background-size: cover;
+            background-attachment: fixed;
+            opacity: 0.25; /* Tenue y legible */
             pointer-events: none;
-            z-index: 0;
-        }
-        .contenido-tarjeta {
-            position: relative;
-            z-index: 10;
+            z-index: -1;
         }
 
         .fade-in {
@@ -68,8 +62,8 @@
 </head>
 <body class="min-h-screen flex items-center justify-center p-4 sm:p-6 text-stone-700">
 
-    <!-- Tarjeta Principal con Fondo Visible -->
-    <div class="tarjeta-invitacion max-w-xl w-full bg-white/95 backdrop-blur-sm p-6 sm:p-10 rounded-2xl shadow-xl border border-bordeCrema text-center relative my-6">
+    <!-- Tarjeta Principal con desenfoque de fondo para máxima nitidez de texto -->
+    <div class="max-w-xl w-full bg-white/90 backdrop-blur-md p-6 sm:p-10 rounded-2xl shadow-xl border border-bordeCrema text-center relative my-6">
         
         <div class="contenido-tarjeta">
             <!-- Icono Decorativo Superior -->
