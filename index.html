@@ -35,7 +35,7 @@
             background-size: 24px 24px;
         }
 
-        /* Marca de agua tenue integrada dentro de la tarjeta */
+        /* Marca de agua nítida y visible */
         .tarjeta-invitacion {
             position: relative;
             overflow: hidden;
@@ -47,8 +47,8 @@
             background-image: url('boda.jpeg');
             background-repeat: no-repeat;
             background-position: center center;
-            background-size: contain; /* Mantiene la proporción real sin estirar */
-            opacity: 0.18; /* Nivel de transparencia suave */
+            background-size: contain;
+            opacity: 0.38; /* Visibilidad equilibrada */
             pointer-events: none;
             z-index: 0;
         }
@@ -68,7 +68,7 @@
 </head>
 <body class="min-h-screen flex items-center justify-center p-4 sm:p-6 text-stone-700">
 
-    <!-- Tarjeta Principal con Marca de Agua integradora -->
+    <!-- Tarjeta Principal con Fondo Visible -->
     <div class="tarjeta-invitacion max-w-xl w-full bg-white/95 backdrop-blur-sm p-6 sm:p-10 rounded-2xl shadow-xl border border-bordeCrema text-center relative my-6">
         
         <div class="contenido-tarjeta">
@@ -89,19 +89,19 @@
                 <!-- Cuenta Regresiva -->
                 <div class="text-xs uppercase tracking-widest text-stone-400 mb-3 font-semibold">Faltan tan solo:</div>
                 <div class="flex justify-center gap-2 sm:gap-3 mb-8">
-                    <div class="bg-cremaTarjeta/90 border border-bordeCrema rounded-xl p-2.5 min-w-[65px] sm:min-w-[72px] shadow-sm">
+                    <div class="bg-cremaTarjeta/95 border border-bordeCrema rounded-xl p-2.5 min-w-[65px] sm:min-w-[72px] shadow-sm">
                         <div class="font-garamond text-2xl sm:text-3xl font-bold text-dorado leading-none" id="countdown-days">00</div>
                         <div class="text-[10px] uppercase tracking-wider text-stone-400 mt-1">Días</div>
                     </div>
-                    <div class="bg-cremaTarjeta/90 border border-bordeCrema rounded-xl p-2.5 min-w-[65px] sm:min-w-[72px] shadow-sm">
+                    <div class="bg-cremaTarjeta/95 border border-bordeCrema rounded-xl p-2.5 min-w-[65px] sm:min-w-[72px] shadow-sm">
                         <div class="font-garamond text-2xl sm:text-3xl font-bold text-dorado leading-none" id="countdown-hours">00</div>
                         <div class="text-[10px] uppercase tracking-wider text-stone-400 mt-1">Horas</div>
                     </div>
-                    <div class="bg-cremaTarjeta/90 border border-bordeCrema rounded-xl p-2.5 min-w-[65px] sm:min-w-[72px] shadow-sm">
+                    <div class="bg-cremaTarjeta/95 border border-bordeCrema rounded-xl p-2.5 min-w-[65px] sm:min-w-[72px] shadow-sm">
                         <div class="font-garamond text-2xl sm:text-3xl font-bold text-dorado leading-none" id="countdown-minutes">00</div>
                         <div class="text-[10px] uppercase tracking-wider text-stone-400 mt-1">Min</div>
                     </div>
-                    <div class="bg-cremaTarjeta/90 border border-bordeCrema rounded-xl p-2.5 min-w-[65px] sm:min-w-[72px] shadow-sm">
+                    <div class="bg-cremaTarjeta/95 border border-bordeCrema rounded-xl p-2.5 min-w-[65px] sm:min-w-[72px] shadow-sm">
                         <div class="font-garamond text-2xl sm:text-3xl font-bold text-dorado leading-none" id="countdown-seconds">00</div>
                         <div class="text-[10px] uppercase tracking-wider text-stone-400 mt-1">Seg</div>
                     </div>
@@ -115,13 +115,13 @@
                     <div>
                         <label for="Nombre" class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1">Nombre completo:</label>
                         <input type="text" id="Nombre" name="Nombre" required placeholder="Tu nombre y apellido" 
-                               class="w-full p-3 border border-stone-300 rounded-lg bg-stone-50/90 text-sm focus:outline-none focus:border-doradoClaro focus:bg-white focus:ring-2 focus:ring-doradoClaro/20 transition">
+                               class="w-full p-3 border border-stone-300 rounded-lg bg-stone-50/95 text-sm focus:outline-none focus:border-doradoClaro focus:bg-white focus:ring-2 focus:ring-doradoClaro/20 transition">
                     </div>
 
                     <div>
                         <label for="Asistencia" class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1">¿Nos acompañarás?</label>
                         <select id="Asistencia" name="Asistencia" 
-                                class="w-full p-3 border border-stone-300 rounded-lg bg-stone-50/90 text-sm focus:outline-none focus:border-doradoClaro focus:bg-white focus:ring-2 focus:ring-doradoClaro/20 transition">
+                                class="w-full p-3 border border-stone-300 rounded-lg bg-stone-50/95 text-sm focus:outline-none focus:border-doradoClaro focus:bg-white focus:ring-2 focus:ring-doradoClaro/20 transition">
                             <option value="Sí, ahí estaré">Sí, ahí estaré</option>
                             <option value="No podré asistir">No podré asistir</option>
                         </select>
@@ -130,13 +130,13 @@
                     <div>
                         <label for="Acompañantes" class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1">Número de acompañantes:</label>
                         <input type="number" id="Acompañantes" name="Acompañantes" value="0" min="0" max="15"
-                               class="w-full p-3 border border-stone-300 rounded-lg bg-stone-50/90 text-sm focus:outline-none focus:border-doradoClaro focus:bg-white focus:ring-2 focus:ring-doradoClaro/20 transition">
+                               class="w-full p-3 border border-stone-300 rounded-lg bg-stone-50/95 text-sm focus:outline-none focus:border-doradoClaro focus:bg-white focus:ring-2 focus:ring-doradoClaro/20 transition">
                     </div>
 
                     <div>
                         <label for="Mensaje" class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1">Mensaje para los novios:</label>
                         <textarea id="Mensaje" name="Mensaje" rows="3" placeholder="Déjanos unas palabras..." 
-                                  class="w-full p-3 border border-stone-300 rounded-lg bg-stone-50/90 text-sm focus:outline-none focus:border-doradoClaro focus:bg-white focus:ring-2 focus:ring-doradoClaro/20 transition"></textarea>
+                                  class="w-full p-3 border border-stone-300 rounded-lg bg-stone-50/95 text-sm focus:outline-none focus:border-doradoClaro focus:bg-white focus:ring-2 focus:ring-doradoClaro/20 transition"></textarea>
                     </div>
 
                     <button type="submit" id="btn-enviar" 
@@ -151,7 +151,7 @@
             <!-- ========================================== -->
             <div id="vista-confirmada" class="hidden fade-in">
                 <!-- Cuadro de Éxito -->
-                <div class="bg-emerald-50/90 border border-emerald-200 rounded-xl p-6 mb-8 text-emerald-800 shadow-sm">
+                <div class="bg-emerald-50/95 border border-emerald-200 rounded-xl p-6 mb-8 text-emerald-800 shadow-sm">
                     <div class="text-3xl mb-1">🎉</div>
                     <h2 class="font-garamond text-3xl font-bold mb-1">¡Muchas gracias por confirmar!</h2>
                     <p class="text-sm text-emerald-700">Hemos guardado tu respuesta con éxito. ¡Te esperamos para celebrar juntos!</p>
@@ -161,7 +161,7 @@
                 <div class="font-garamond text-3xl text-dorado border-b border-bordeCrema pb-2 mb-6 font-semibold">Ubicaciones del Evento</div>
 
                 <!-- Tarjeta Ceremonia Religiosa -->
-                <div class="bg-cremaTarjeta/90 border border-bordeCrema rounded-xl p-5 mb-6 text-center shadow-sm">
+                <div class="bg-cremaTarjeta/95 border border-bordeCrema rounded-xl p-5 mb-6 text-center shadow-sm">
                     <div class="text-3xl mb-1">⛪</div>
                     <div class="font-garamond text-2xl font-bold text-stone-800">Ceremonia Religiosa</div>
                     <div class="text-sm font-semibold text-doradoClaro mt-1 mb-3">5:00 PM — Catedral de Azcapotzalco</div>
@@ -180,7 +180,7 @@
                 </div>
 
                 <!-- Tarjeta Recepción / Salón -->
-                <div class="bg-cremaTarjeta/90 border border-bordeCrema rounded-xl p-5 mb-6 text-center shadow-sm">
+                <div class="bg-cremaTarjeta/95 border border-bordeCrema rounded-xl p-5 mb-6 text-center shadow-sm">
                     <div class="text-3xl mb-1">🥂</div>
                     <div class="font-garamond text-2xl font-bold text-stone-800">Recepción / Salón</div>
                     <div class="text-sm font-semibold text-doradoClaro mt-1 mb-3">6:30 PM</div>
@@ -219,4 +219,56 @@
 
             if (diferencia > 0) {
                 const numDias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-                const numHoras =
+                const numHoras = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const numMinutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+                const numSegundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+                if (elDays) elDays.textContent = numDias < 10 ? '0' + numDias : numDias;
+                if (elHours) elHours.textContent = numHoras < 10 ? '0' + numHoras : numHoras;
+                if (elMinutes) elMinutes.textContent = numMinutos < 10 ? '0' + numMinutos : numMinutos;
+                if (elSeconds) elSeconds.textContent = numSegundos < 10 ? '0' + numSegundos : numSegundos;
+            }
+        }
+
+        setInterval(actualizarCuentaRegresiva, 1000);
+        actualizarCuentaRegresiva();
+
+        // ENVÍO DE FORMULARIO
+        const form = document.getElementById('rsvp-form');
+        const vistaInicial = document.getElementById('vista-inicial');
+        const vistaConfirmada = document.getElementById('vista-confirmada');
+        const btnEnviar = document.getElementById('btn-enviar');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            btnEnviar.disabled = true;
+            btnEnviar.innerText = 'Enviando...';
+
+            const mostrarConfirmacion = () => {
+                vistaInicial.classList.add('hidden');
+                vistaConfirmada.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+
+            if (!scriptURL || !scriptURL.startsWith('http')) {
+                console.warn('URL de Google Apps Script no configurada.');
+                setTimeout(mostrarConfirmacion, 500);
+                return;
+            }
+
+            fetch(scriptURL, { 
+                method: 'POST', 
+                mode: 'no-cors',
+                body: new FormData(form)
+            })
+            .then(() => {
+                mostrarConfirmacion();
+            })
+            .catch(error => {
+                console.error('Error al enviar:', error);
+                mostrarConfirmacion();
+            });
+        });
+    </script>
+</body>
+</html>
