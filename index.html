@@ -51,7 +51,7 @@
             z-index: -1;
         }
 
-        /* Marca de agua dentro del cuadro principal de la tarjeta */
+        /* Marca de agua cubriendo por completo el recuadro sin dejar márgenes */
         .tarjeta-invitacion {
             position: relative;
             overflow: hidden;
@@ -59,11 +59,13 @@
         .tarjeta-invitacion::before {
             content: "";
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
+            inset: 0;
+            width: 100%;
+            height: 100%;
             background-image: url('Boda.jpg');
             background-repeat: no-repeat;
             background-position: center center;
-            background-size: contain;
+            background-size: cover;
             opacity: 0.28;
             pointer-events: none;
             z-index: 0;
@@ -84,8 +86,8 @@
 </head>
 <body class="min-h-screen flex items-center justify-center p-4 sm:p-6 text-stone-700">
 
-    <!-- Tarjeta Principal con Marca de Agua Interna y Fondo Exterior -->
-    <div class="tarjeta-invitacion max-w-xl w-full bg-white/90 backdrop-blur-md p-6 sm:p-10 rounded-2xl shadow-xl border border-bordeCrema text-center relative my-6">
+    <!-- Tarjeta Principal a Sangre Completa -->
+    <div class="tarjeta-invitacion max-w-xl w-full bg-cremaTarjeta/85 backdrop-blur-sm p-6 sm:p-10 rounded-2xl shadow-xl border border-bordeCrema text-center relative my-6">
         
         <div class="contenido-tarjeta">
             <!-- Icono Decorativo Superior -->
