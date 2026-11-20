@@ -35,7 +35,7 @@
             background-size: 24px 24px;
         }
 
-        /* Marca de agua nítida y visible */
+        /* Marca de agua nítida y visible con la imagen corregida (Boda.jpg) */
         .tarjeta-invitacion {
             position: relative;
             overflow: hidden;
@@ -44,7 +44,7 @@
             content: "";
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background-image: url('boda.jgp');
+            background-image: url('Boda.jpg');
             background-repeat: no-repeat;
             background-position: center center;
             background-size: contain;
@@ -129,8 +129,25 @@
 
                     <div>
                         <label for="Acompañantes" class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1">Número de acompañantes:</label>
-                        <input type="number" id="Acompañantes" name="Acompañantes" value="0" min="0" max="15"
-                               class="w-full p-3 border border-stone-300 rounded-lg bg-stone-50/95 text-sm focus:outline-none focus:border-doradoClaro focus:bg-white focus:ring-2 focus:ring-doradoClaro/20 transition">
+                        <select id="Acompañantes" name="Acompañantes" 
+                                class="w-full p-3 border border-stone-300 rounded-lg bg-stone-50/95 text-sm focus:outline-none focus:border-doradoClaro focus:bg-white focus:ring-2 focus:ring-doradoClaro/20 transition">
+                            <option value="0">0 (Solo yo)</option>
+                            <option value="1">1 acompañante</option>
+                            <option value="2">2 acompañantes</option>
+                            <option value="3">3 acompañantes</option>
+                            <option value="4">4 acompañantes</option>
+                            <option value="5">5 acompañantes</option>
+                            <option value="6">6 acompañantes</option>
+                            <option value="7">7 acompañantes</option>
+                            <option value="8">8 acompañantes</option>
+                            <option value="9">9 acompañantes</option>
+                            <option value="10">10 acompañantes</option>
+                            <option value="11">11 acompañantes</option>
+                            <option value="12">12 acompañantes</option>
+                            <option value="13">13 acompañantes</option>
+                            <option value="14">14 acompañantes</option>
+                            <option value="15">15 acompañantes</option>
+                        </select>
                     </div>
 
                     <div>
