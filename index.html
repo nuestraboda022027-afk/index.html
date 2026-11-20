@@ -36,7 +36,7 @@
             min-height: 100vh;
         }
 
-        /* Capa de fondo con Boda.jpg tenue */
+        /* Capa de fondo con Boda.jpg tenue en toda la pantalla */
         body::before {
             content: "";
             position: fixed;
@@ -46,9 +46,31 @@
             background-position: center center;
             background-size: cover;
             background-attachment: fixed;
-            opacity: 0.25; /* Tenue y legible */
+            opacity: 0.22;
             pointer-events: none;
             z-index: -1;
+        }
+
+        /* Marca de agua dentro del cuadro principal de la tarjeta */
+        .tarjeta-invitacion {
+            position: relative;
+            overflow: hidden;
+        }
+        .tarjeta-invitacion::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url('Boda.jpg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+            opacity: 0.28;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .contenido-tarjeta {
+            position: relative;
+            z-index: 10;
         }
 
         .fade-in {
@@ -62,8 +84,8 @@
 </head>
 <body class="min-h-screen flex items-center justify-center p-4 sm:p-6 text-stone-700">
 
-    <!-- Tarjeta Principal con desenfoque de fondo para máxima nitidez de texto -->
-    <div class="max-w-xl w-full bg-white/90 backdrop-blur-md p-6 sm:p-10 rounded-2xl shadow-xl border border-bordeCrema text-center relative my-6">
+    <!-- Tarjeta Principal con Marca de Agua Interna y Fondo Exterior -->
+    <div class="tarjeta-invitacion max-w-xl w-full bg-white/90 backdrop-blur-md p-6 sm:p-10 rounded-2xl shadow-xl border border-bordeCrema text-center relative my-6">
         
         <div class="contenido-tarjeta">
             <!-- Icono Decorativo Superior -->
